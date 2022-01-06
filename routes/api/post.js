@@ -6,8 +6,8 @@ const getMyPostsController = require("../../controllers/getMyPostsController");
 const router = express.Router();
 const validateAccessToken = require("../../middlewares/jwt_validation");
 
-router.post("/createpost", validateAccessToken, postController);
-router.get("/post", validateAccessToken, getPostsController);
-router.get("/mypost", validateAccessToken, getMyPostsController);
+router.post("/createpost", postController);
+router.get("/post", getPostsController);
+router.get("/mypost", getMyPostsController);
 
 module.exports = router;
