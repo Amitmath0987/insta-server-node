@@ -49,11 +49,10 @@ const postRatingValidation = Joi.object({
   rating: Joi.number().greater(0).less(6).required(),
 });
 
-const createMessageGroupValidation = Joi.object({
-  usersList: Joi.array(),
+const createConversationValidation = Joi.object({
+  usersList: Joi.array().min(2).required(),
   type: Joi.string().valid("single", "group").required(),
-  name: Joi.string().min(3).max(30),
-  description: Joi.string().min(2).max(1000),
+  groupName: Joi.string().min(3).max(30),
 });
 
 const createFollowRequestUpdateValidation = Joi.object({
@@ -101,7 +100,7 @@ module.exports = {
   postRatingValidation,
   updateUserValidation,
   createPostValidation,
-  createMessageGroupValidation,
+  createConversationValidation,
   getMessageGroupValidation,
   newMessageValidation,
   newNotificationValidation,
