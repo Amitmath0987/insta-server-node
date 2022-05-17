@@ -4,19 +4,17 @@ const User = mongoose.model("User");
 const getUser = async (req, res, next) => {
   try {
     const { _id: userId } = req.user;
-    const userDetails = await User.findOne({ _id: userId });
+    const userDetails = await User.findOne({ _id: userId }).select(
+      "-password -__v  "
+    );
     console.log(userDetails, "userDetails");
     if (!userDetails) {
       throw createError.InternalServerError("User details can not be fetched.");
     }
-    const sanitizeUserDetails = {
-      _id: userDetails?._id,
-      name: userDetails?.name,
-      email: userDetails?.email,
-    };
+
     res.status(200).json({
       message: "success",
-      data: sanitizeUserDetails,
+      data: userDetails,
     });
   } catch (error) {
     console.log("Error getUser:", error);

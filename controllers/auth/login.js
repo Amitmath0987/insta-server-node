@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const createError = require("http-errors");
 const bcrypt = require("bcryptjs");
-const { loginValidation } = require("../services/validation_schema");
-const { generateAccessToken } = require("../services/generate_token");
+const { loginValidation } = require("../../services/validation_schema");
+const { generateAccessToken } = require("../../services/generate_token");
 // const { accessTokenLife } = require("../keys").jwt;
 
 const User = mongoose.model("User");

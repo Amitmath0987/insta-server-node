@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const registerUser = require("../../controllers/registerUser");
-const login = require("../../controllers/login");
+const registerUser = require("../../controllers/auth/registerUser");
+const login = require("../../controllers/auth/login");
 const validateAccessToken = require("../../middlewares/jwt_validation");
 
 // router.get("/", (req, res) => {

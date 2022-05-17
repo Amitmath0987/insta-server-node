@@ -17,8 +17,7 @@ const validateAccessToken = async (req, res, next) => {
         }
         if (decoded) {
           const { _id } = await decoded;
-          const user = await User.findById(_id);
-          user.password = undefined;
+          const user = await User.findById(_id).select("-password");
           req.user = user;
           next();
         }

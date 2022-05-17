@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const createError = require("http-errors");
 const User = mongoose.model("User");
-const { registerValidation } = require("../services/validation_schema");
+const { registerValidation } = require("../../services/validation_schema");
 const registerUser = async (req, res, next) => {
   try {
     // validation code here
