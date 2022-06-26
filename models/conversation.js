@@ -35,7 +35,7 @@ const converSationSchema = new mongoose.Schema(
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
-const Chats = mongoose.model("Conversation", converSationSchema);
+const Conversation = mongoose.model("Conversation", converSationSchema);
 
 // make this available to our users in our Node applications
-module.exports = Chats;
+module.exports = Conversation;

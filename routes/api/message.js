@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/conversation", validateAccessToken, createConverSation);
 
 // get conversation
-// router.get("/conversationlist", validateAccessToken, getConverSationList);
+router.get("/conversation", validateAccessToken, getConverSationList);
 
 // create group chat
 // router.post("/groupchat", validateAccessToken, createGroupChat);
